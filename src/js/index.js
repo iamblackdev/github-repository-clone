@@ -13,7 +13,7 @@ let fetchedUser = 'iamblackdev'
 // GETTING ELEMENTS FROM THE DOM
 let names = document.querySelectorAll('.name-identifier');
 let bio = document.querySelectorAll('.bio-identifier');
-let avatarUrl = document.querySelectorAll('.avatar-identifier')
+let avatars = document.querySelectorAll('.avatar-identifier')
 let usernames = document.querySelectorAll('.username-identifier')
 let counters = document.querySelectorAll('.counter')
 let repositories = document.querySelector('.repositories-list-identifier')
@@ -99,7 +99,11 @@ let updatedAt, humanTime,
         bio.forEach(bio => bio.innerText = fetchedData.data.repositoryOwner.bio)
 
         // OUTPUTING AVATER URL TO THE DOM 
-        avatarUrl.forEach(avatarUrl => avatarUrl.src = fetchedData.data.repositoryOwner.avatarUrl)
+        avatars.forEach(avatar => {
+          avatar.src = fetchedData.data.repositoryOwner.avatarUrl
+          avatar.alt = `@${fetchedUser}`
+
+        })
 
         // OUTPUTING TOTAL REPOSITORIES COUNTER TO THE DOM 
         counters.forEach(counter => counter.innerText = fetchedData.data.repositoryOwner.repositories.totalCount)
