@@ -59,6 +59,19 @@ button{
   opacity: 0 !important;
 }
 
+.private-label{
+  display: inline-block;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 2em;
+  background-color: initial!important;
+  border: 1px solid transparent;
+  color: #586069;
+  border: 1px solid var(--color-border-primary);
+  margin-left: 4px;
+}
 
 
 /* HEADER STYLES */
@@ -313,7 +326,7 @@ header .user-status:hover svg{
 
 /* CARD */
 main .main-header{
-  margin-top: 24px;
+  margin-top: 16px;
   border-bottom: 1px solid #e1e4e8;
 }
 main .main-header.large.sticky{
@@ -444,19 +457,42 @@ main .user-status-circle-badge {
   right: 2px;
   background-color: #fff;
   border: 1px solid var(--color-border-primary);
-  border-radius: 50%;
   box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04);
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
   width: 38px;
   height: 38px;
+  padding: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
 }
+
 
 main .user-status-circle-badge.mobile{
   display: none;
 }
 
+main .user-status-circle-badge .set-status-text{
+  display: none;
+  margin-left: 4px;
+}
+main .user-status-circle-badge:hover{
+  right: -64px;
+  padding: 8px 8px 8px 9.5px;
+  border-radius: 28px;
+  width: auto;
+  box-shadow: rgba(149, 157, 165, 0.15) 0px 3px 6px 0px; 
+}
+main .user-status-circle-badge:hover svg{
+  fill: #0366d6;
+}
+main .user-status-circle-badge:hover .set-status-text{
+  color: #0366d6;
+  display: inline-block;
+}
 main .user-status-emoji-container{
   color: rgb(88, 96, 105);
   margin-right: 0;
